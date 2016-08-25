@@ -1,0 +1,77 @@
+<?php
+namespace Germania\AssetTimestamper;
+
+class AssetTimestamper
+{
+
+    /**
+     * @var string
+     */
+    public $base_path;
+
+
+    /**
+     * Timestamp format to use.
+     *
+     * @see http://php.net/manual/de/function.date.php
+     * @var string
+     */
+    public $format = 'YmdHis';
+
+
+    /**
+     * @param string $base_path Optional: Base path, default: Current work dir.
+     * @uses   $base_path
+     */
+    public function __construct( $base_path = null )
+    {
+        $this->base_path = $base_path ?: getcwd();
+    }
+
+    /**
+     * @return string
+     * @uses   $base_path
+     */
+    public function getBasePath()
+    {
+        return $this->base_path;
+    }
+
+    /**
+     * @param  string $asset Asset URL
+     * @return string Timestamped Asset URL
+     * @uses   $base_path
+     */
+    public function __invoke( $asset )
+    {
+        // Parse asset URL
+        $asset_parts = parse_url( $asset );
+
+        // Exclude if asset seems to come from different location,
+        // i.e. if it has defined hostname
+        if (is_array($asset_parts)
+        and !empty($asset_parts['host'])) {
+            return $asset;
+        }
+
+        // Prepend DIRECTORY_SEPARATOR if missing
+        $work_asset = (substr($asset, 0, strlen(\DIRECTORY_SEPARATOR)) === \DIRECTORY_SEPARATOR)
+        ? $asset
+        : \DIRECTORY_SEPARATOR . $asset;
+
+        // Glue base path and asset; throw if file not existant
+        if (!$real_file = realpath($this->base_path . $work_asset)) {
+            throw new FileException( "File does not exist: $real_file");
+        }
+
+        // Create Putput
+        $timestamp = date('YmdHis', filemtime( $real_file ));
+
+        $path_info = pathinfo( $asset );
+        $result    = str_replace( $path_info['basename'],
+            $path_info['filename'] . '.' . $timestamp . '.' . $path_info['extension'],
+            $asset);
+
+        return $result;
+    }
+}
