@@ -13,7 +13,7 @@ See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-
 ##Installation
 
 ```bash
-composer require germania-kg/asset-timestamper
+$ composer require germania-kg/asset-timestamper
 ```
 
 Alternatively, add this package directly to your *composer.json:*
