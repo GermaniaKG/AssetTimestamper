@@ -10,6 +10,19 @@ and returns a modified asset path that contains that very timestamp.
 
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2). Please note — As Chris Coyier [points out](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-3), this technique may slow down server response. Using this technique for *only some files* should be fine, be aware to not over-use it.
 
+##Installation
+
+```bash
+composer require germania-kg/asset-timestamper
+```
+
+Alternatively, add this package directly to your *composer.json:*
+
+```json
+"require": {
+    "germania-kg/asset-timestamper": "^1.0"
+}
+```
 ##Usage
 
 You do not need to have a leading directory separator slash, as it will internally be “glued in” if neccessary. However, the result will have (or miss) the slash, depending on how you pass in the asset file name.
