@@ -60,19 +60,73 @@ You can define a custom directory where AssetTimestamper should look for the ass
 /var/www/project/static/dist/styles.css
 ```
 
-**Examples for PHP and HTML:**
+###Examples for PHP and HTML:
+
+Use AssetTimestamper with another base directory:
 
 ```php
 <?php
 // Instantiation
 $at = new AssetTimestamper( "/var/www/project/static" );
-echo $at( '/dist/styles.css' );
+
+echo '<link rel="stylesheet" type="text/css" href="//static.test.com'
+     . $at( '/dist/styles.css' ) . '">';
 ```
+
+HTML Output:
 
 ```html
 <link rel="stylesheet" type="text/css" href="//static.test.com/dist/styles.20160522140459.css">
 ```
 
+###Simple Twig Example
+
+```php
+echo $twig->render("website.tpl", [
+	'stylesheets' => [
+		$at( 'dist/styles.css' ),
+		$at( 'dist/widget.css' )
+	]
+]);
+```
+
+##Alternative Twig Integration: Filter
+
+Since AssetTimestamper is invokable and a Callable, it can be easily used as a [Twig SimpleFilter:](http://twig.sensiolabs.org/doc/advanced.html#filters)
+
+```php
+<?php
+$at     = new AssetTimestamper( "/var/www/project/static" ),
+$filter = new Twig_SimpleFilter('add_timestamp', $at),
+
+$twig->addFilter( $filter );
+```
+
+So rendering a website like this:
+
+```php
+echo $twig->render("website.tpl", [
+	'stylesheets' => [
+		'dist/styles.css',
+		'dist/widget.css'
+	]
+]);
+```
+
+…using this Twig template …
+
+```twig
+{% for css in stylesheets %}
+<link rel="stylesheet" href="//static.test.com/{{ css|add_timestamp }}">
+{% endfor %}
+```
+
+… will lead to this output:
+
+```html
+<link rel="stylesheet" href="//static.test.com/dist/styles.20160419100233.css">
+<link rel="stylesheet" href="//static.test.com/dist/widget.20160413152259.css">
+```
 
 
 
