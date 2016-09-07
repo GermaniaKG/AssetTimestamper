@@ -136,7 +136,7 @@ Since browsers will request the modified file name (which in fact does not exist
 
 ```
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)\.(d+)\.(js|css)$ $1.$3 [L]
+RewriteRule ^(.+)\.(\d+)\.(js|css)$ $1.$3 [L]
 ```
 
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2), and Stefano's [comment on this.](https://css-tricks.com/strategies-for-cache-busting-css/#comment-1596418)
