@@ -15,6 +15,13 @@
 		}
 	},
 
+  "autoload-dev": {
+      "psr-4": {
+      	"mocks\\": "tests/mocks",
+      	"tests\\": "tests/src"
+      }
+  },
+
 	"require-dev": {
 			"satooshi/php-coveralls": "^1.0",
 			"phpunit/phpunit": "^5.2"
