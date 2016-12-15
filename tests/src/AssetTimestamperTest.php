@@ -2,6 +2,7 @@
 namespace tests;
 
 use Germania\AssetTimestamper\AssetTimestamper;
+use Germania\AssetTimestamper\FileException;
 
 
 class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
@@ -52,6 +53,48 @@ class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( $asset_first_char,  $result_first_char );
     }
 
+
+    /**
+     * @dataProvider provideInvalidFilenames
+     */
+    public function testTimestampingOnNotExistingFiles( $asset ) {
+        $sut = new AssetTimestamper( $this->mock_dir );
+
+        $path_info = pathinfo( $asset );
+
+        $this->expectException( FileException::class );
+        $result = $sut( $asset );
+    }
+
+
+    /**
+     * @dataProvider provideUrls
+     */
+    public function testTimestampingOnUrls( $asset ) {
+        $sut = new AssetTimestamper( $this->mock_dir );
+
+        $path_info = pathinfo( $asset );
+
+        $result = $sut( $asset );
+        $this->assertEquals($result, $asset);
+    }
+
+
+    public function provideUrls()
+    {
+        return array(
+            [ "//localhost/path/to/foo.txt" ],
+            [ "http://www.test.com/bar.html" ]
+        );
+    }
+
+    public function provideInvalidFilenames()
+    {
+        return array(
+            [ "notexisting.txt" ],
+            [ "/subdir/notexisting.txt" ]
+        );
+    }
 
     public function provideValidFilenames()
     {

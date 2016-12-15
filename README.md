@@ -7,6 +7,7 @@ This Callable looks for a given asset file (e.g. CSS, JS usually) in a base dire
 extracts its [modification time](http://php.net/manual/en/function.filemtime.php)
 and returns a modified asset path that contains that very timestamp.
 
+**For remote files,** no timestamps will be added. AssetTimestamper will check for *host* entry in PHP's *parse_url's* result array.
 
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2). Please note — As Chris Coyier [points out](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-3), this technique may slow down server response. Using this technique for *only some files* should be fine, be aware to not over-use it.
 
