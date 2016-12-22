@@ -61,7 +61,7 @@ class AssetTimestamper
 
         // Glue base path and asset; throw if file not existant
         if (!$real_file = realpath($this->base_path . $work_asset)) {
-            throw new FileException( "File does not exist: $real_file");
+            return $asset;
         }
 
         // Create Putput
