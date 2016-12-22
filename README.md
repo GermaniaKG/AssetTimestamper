@@ -26,7 +26,7 @@ Alternatively, add this package directly to your *composer.json:*
 ```
 ##Upgrade from v1
 
-
+In v1, a **FileException** was thrown if a given asset did not exist. As of version 2, the original asset file name will be returned. If you have not seen this *FileException* until now, you will have to do nothing. All others have to remove *FileException* catch blocks.
 
 ##Usage
 
