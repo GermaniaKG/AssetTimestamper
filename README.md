@@ -24,6 +24,10 @@ Alternatively, add this package directly to your *composer.json:*
     "germania-kg/asset-timestamper": "^1.0"
 }
 ```
+##Upgrade from v1
+
+
+
 ##Usage
 
 You do not need to have a leading directory separator slash, as it will internally be “glued in” if neccessary. However, the result will have (or miss) the slash, depending on how you pass in the asset file name.

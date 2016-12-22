@@ -62,8 +62,10 @@ class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
 
         $path_info = pathinfo( $asset );
 
-        $this->expectException( FileException::class );
+        // As of v2, no Exception here
+        #$this->expectException( FileException::class );
         $result = $sut( $asset );
+        $this->assertEquals($result, $asset);
     }
 
 
