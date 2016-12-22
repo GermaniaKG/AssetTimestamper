@@ -24,6 +24,10 @@ Alternatively, add this package directly to your *composer.json:*
     "germania-kg/asset-timestamper": "^1.0"
 }
 ```
+##Upgrade from v1
+
+In v1, a **FileException** was thrown if a given asset did not exist. As of version 2, the original asset file name will be returned. If you have not seen this *FileException* until now, you will have to do nothing. All others have to remove *FileException* catch blocks.
+
 ##Usage
 
 You do not need to have a leading directory separator slash, as it will internally be “glued in” if neccessary. However, the result will have (or miss) the slash, depending on how you pass in the asset file name.
