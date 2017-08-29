@@ -22,7 +22,7 @@ class AssetTimestamper
      * Separator sign that covers the timestamp
      * @var string
      */
-    public $separator = '.';
+    public $separator = '-';
 
 
     /**
