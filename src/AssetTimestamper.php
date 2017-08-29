@@ -18,6 +18,12 @@ class AssetTimestamper
      */
     public $format = 'YmdHis';
 
+    /**
+     * Separator sign that covers the timestamp
+     * @var string
+     */
+    public $separator = '.';
+
 
     /**
      * @param string $base_path Optional: Base path, default: Current work dir.
@@ -70,7 +76,7 @@ class AssetTimestamper
         $path_info = pathinfo( $asset );
         $result    = str_replace(
             $path_info['basename'],
-            $path_info['filename'] . '.' . $timestamp . '.' . $path_info['extension'],
+            join( $this->separator, array($path_info['filename'],  $timestamp, $path_info['extension'] )),
             $asset
         );
 
