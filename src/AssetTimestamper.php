@@ -18,6 +18,12 @@ class AssetTimestamper
      */
     public $format = 'YmdHis';
 
+    /**
+     * Separator sign that covers the timestamp
+     * @var string
+     */
+    public $separator = '.';
+
 
     /**
      * @param string $base_path Optional: Base path, default: Current work dir.
@@ -64,13 +70,22 @@ class AssetTimestamper
             return $asset;
         }
 
-        // Create Putput
-        $timestamp = date('YmdHis', filemtime( $real_file ));
+        // Build result
+        $timestamp = date( $this->format, filemtime( $real_file ));
 
         $path_info = pathinfo( $asset );
-        $result    = str_replace( $path_info['basename'],
-            $path_info['filename'] . '.' . $timestamp . '.' . $path_info['extension'],
-            $asset);
+
+        $result = str_replace(
+            $path_info['basename'],
+            join( "", [
+                $path_info['filename'],
+                $this->separator,
+                $timestamp,
+                ".",
+                $path_info['extension']
+            ]),
+            $asset
+        );
 
         return $result;
     }
