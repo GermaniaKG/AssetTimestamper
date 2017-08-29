@@ -68,9 +68,11 @@ class AssetTimestamper
         $timestamp = date( $this->format, filemtime( $real_file ));
 
         $path_info = pathinfo( $asset );
-        $result    = str_replace( $path_info['basename'],
+        $result    = str_replace(
+            $path_info['basename'],
             $path_info['filename'] . '.' . $timestamp . '.' . $path_info['extension'],
-            $asset);
+            $asset
+        );
 
         return $result;
     }
