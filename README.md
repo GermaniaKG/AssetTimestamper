@@ -27,7 +27,7 @@ Alternatively, add this package directly to your *composer.json:*
 
 ```json
 "require": {
-    "germania-kg/asset-timestamper": "^1.0"
+    "germania-kg/asset-timestamper": "^2.0"
 }
 ```
 ## Upgrade from v1
