@@ -2,7 +2,7 @@
 
 **File modification timestamps for your website assets.**
 
-
+[![Build Status](https://travis-ci.org/GermaniaKG/AssetTimestamper.svg?branch=master)](https://travis-ci.org/GermaniaKG/AssetTimestamper)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/build-status/master)
