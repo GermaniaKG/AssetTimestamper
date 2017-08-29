@@ -77,9 +77,11 @@ class AssetTimestamper
 
         $result = str_replace(
             $path_info['basename'],
-            join( $this->separator, [
+            join( "", [
                 $path_info['filename'],
+                $this->separator,
                 $timestamp,
+                ".",
                 $path_info['extension']
             ]),
             $asset
