@@ -65,7 +65,7 @@ class AssetTimestamper
         }
 
         // Build result
-        $timestamp = date('YmdHis', filemtime( $real_file ));
+        $timestamp = date( $this->format, filemtime( $real_file ));
 
         $path_info = pathinfo( $asset );
         $result    = str_replace( $path_info['basename'],
