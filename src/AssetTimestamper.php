@@ -19,7 +19,7 @@ class AssetTimestamper
     public $format = 'YmdHis';
 
     /**
-     * Separator sign that covers the timestamp
+     * Separator sign that preceeds the timestamp
      * @var string
      */
     public $separator = '.';
