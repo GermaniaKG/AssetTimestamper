@@ -64,7 +64,7 @@ class AssetTimestamper
             return $asset;
         }
 
-        // Create Putput
+        // Build result
         $timestamp = date('YmdHis', filemtime( $real_file ));
 
         $path_info = pathinfo( $asset );
