@@ -50,7 +50,7 @@ class AssetTimestamper
         // Exclude if asset seems to come from different location,
         // i.e. if it has defined hostname
         if (is_array($asset_parts)
-        and !empty($asset_parts['host'])) {
+        && !empty($asset_parts['host'])) {
             return $asset;
         }
 
