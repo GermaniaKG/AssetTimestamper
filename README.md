@@ -3,6 +3,12 @@
 **File modification timestamps for your website assets.**
 
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/build-status/master)
+
+
+
 This Callable looks for a given asset file (e.g. CSS, JS usually) in a base directory,
 extracts its [modification time](http://php.net/manual/en/function.filemtime.php)
 and returns a modified asset path that contains that very timestamp.
