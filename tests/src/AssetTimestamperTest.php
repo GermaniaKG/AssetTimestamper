@@ -2,7 +2,6 @@
 namespace tests;
 
 use Germania\AssetTimestamper\AssetTimestamper;
-use Germania\AssetTimestamper\FileException;
 
 
 class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
@@ -63,7 +62,6 @@ class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
         $path_info = pathinfo( $asset );
 
         // As of v2, no Exception here
-        #$this->expectException( FileException::class );
         $result = $sut( $asset );
         $this->assertEquals($result, $asset);
     }

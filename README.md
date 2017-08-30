@@ -34,6 +34,10 @@ Alternatively, add this package directly to your *composer.json:*
 
 In v1, a **FileException** was thrown if a given asset did not exist. As of version 2, the original asset file name will be returned. If you have not seen this *FileException* until now, you will have to do nothing. All others have to remove *FileException* catch blocks.
 
+**Deprecation warning:** The *FileException* class is still available with this package and will be removed in Release Version 3. Discuss at [issue #1][i1].
+
+
+
 ## Usage
 
 You do not need to have a leading directory separator slash, as it will internally be “glued in” if neccessary. However, the result will have (or miss) the slash, depending on how you pass in the asset file name.
@@ -151,6 +155,17 @@ RewriteRule ^(.+)\.(\d+)\.(js|css)$ $1.$3 [L]
 ```
 
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2), and Stefano's [comment on this.](https://css-tricks.com/strategies-for-cache-busting-css/#comment-1596418)
+
+
+
+
+## Issues
+
+No issues known so far, feel free to create one at [issues page.][i0]
+
+[i0]: https://github.com/GermaniaKG/AssetTimestamper/issues 
+[i1]: https://github.com/GermaniaKG/AssetTimestamper/issues/1 
+
 
 
 ## Development
