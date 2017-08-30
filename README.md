@@ -156,8 +156,8 @@ See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-
 ## Development
 
 ```bash
-$ git clone https://github.com/owner/package.git
-$ cd package
+$ git clone https://github.com/GermaniaKG/AssetTimestamper.git
+$ cd AssetTimestamper
 $ composer install
 ```
 
