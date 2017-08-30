@@ -11,21 +11,15 @@ build:
     nodes:
         php71:
             environment:
-                override:
-                    -
-                        version: "7.1" # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
+                php: 7.1 # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
 
         php56:
             environment:
-                override:
-                    -
-                        version: "5.6" # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
+                php: 5.6 # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
 
         hhvm:
             environment:
-                override:
-                    -
-                        version: "hhvm" # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
+                php: hhvm # Common versions: 5.4, 5.5, 5.6, 7.1 or hhvm
 
 
 checks:
