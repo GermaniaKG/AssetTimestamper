@@ -70,6 +70,18 @@ class AssetTimestamper
             return $asset;
         }
 
+        $result = $this->buildTimestampedPath($asset, $real_file);
+        return $result;
+    }
+
+
+    /**
+     * @param  string $asset     Asset path
+     * @param  string $real_file Real file path
+     * @return string            The timestamped asset file name
+     */
+    public function buildTimestampedPath($asset, $real_file)
+    {
         // Build result
         $timestamp = date( $this->format, filemtime( $real_file ));
 
