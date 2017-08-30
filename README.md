@@ -153,7 +153,20 @@ RewriteRule ^(.+)\.(\d+)\.(js|css)$ $1.$3 [L]
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2), and Stefano's [comment on this.](https://css-tricks.com/strategies-for-cache-busting-css/#comment-1596418)
 
 
-## Development and Testing
+## Development
 
-- Develop using `develop` branch, using Git Flow. 
-- For testing, dive into repo directory, install PhpUnit and run `phpunit`.
+```bash
+$ git clone https://github.com/owner/package.git
+$ cd package
+$ composer install
+```
+
+
+## Unit tests
+
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
+Run [PhpUnit](https://phpunit.de/) like this:
+
+```bash
+$ vendor/bin/phpunit
+```
