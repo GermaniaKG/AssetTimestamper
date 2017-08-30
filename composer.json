@@ -1,5 +1,8 @@
 {
 	"name": "germania-kg/asset-timestamper",
+	"description": "File modification timestamps for your website assets.",
+
+	"license": "MIT",
 
 	"authors": [
 		{
