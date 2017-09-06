@@ -1,4 +1,4 @@
-# AssetTimestamper
+# Germania KG · AssetTimestamper
 
 **File modification timestamps for your website assets.**
 
