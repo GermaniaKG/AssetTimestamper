@@ -1,33 +1,41 @@
 {
-	"name": "germania-kg/asset-timestamper",
-	"description": "File modification timestamps for your website assets.",
+    "name": "germania-kg/asset-timestamper",
+    "description": "File modification timestamps for your website assets.",
 
-	"license": "MIT",
+    "license": "MIT",
 
-	"authors": [
-		{
-			"name":  "Carsten Witt",
-			"email": "carstenwitt@germania-kg.de",
-			"role":  "Developer"
-		}
-	],
+    "authors": [
+        {
+            "name":  "Carsten Witt",
+            "email": "carstenwitt@germania-kg.de",
+            "role":  "Developer"
+        }
+    ],
 
-	"autoload": {
-		"psr-4": {
-			"Germania\\AssetTimestamper\\": "src"
-		}
-	},
+    "autoload": {
+        "psr-4": {
+            "Germania\\AssetTimestamper\\": "src"
+        }
+    },
 
-  "autoload-dev": {
-      "psr-4": {
-      	"mocks\\": "tests/mocks",
-      	"tests\\": "tests/src"
-      }
-  },
+    "autoload-dev": {
+        "psr-4": {
+            "mocks\\": "tests/mocks",
+            "tests\\": "tests/src"
+        }
+    },
 
-	"require-dev": {
-			"satooshi/php-coveralls": "^1.0",
-			"phpunit/phpunit": "^5.2"
-	}
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2.0",
+        "phpunit/phpunit": "^5.7|^6.0|^7.0"
+    },
+
+    "scripts": {
+        "phpunit": "phpunit",
+
+        "test": [
+            "@phpunit"
+        ]
+    }
 
 }
