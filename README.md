@@ -2,10 +2,13 @@
 
 **File modification timestamps for your website assets.**
 
-[![Build Status](https://travis-ci.org/GermaniaKG/AssetTimestamper.svg?branch=master)](https://travis-ci.org/GermaniaKG/AssetTimestamper)
+[![Packagist](https://img.shields.io/packagist/v/germania-kg/asset-timestamper.svg?style=flat)](https://packagist.org/packages/germania-kg/asset-timestamper)
+[![PHP version](https://img.shields.io/packagist/php-v/germania-kg/asset-timestamper.svg)](https://packagist.org/packages/germania-kg/asset-timestamper)
+[![Build Status](https://img.shields.io/travis/GermaniaKG/AssetTimestamper.svg?label=Travis%20CI)](https://travis-ci.org/GermaniaKG/AssetTimestamper)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/AssetTimestamper/build-status/master)
+
 
 
 
@@ -17,7 +20,8 @@ and returns a modified asset path that contains that very timestamp.
 
 See Chris Coyier's article [“Strategies for Cache-Busting CSS”](https://css-tricks.com/strategies-for-cache-busting-css), chapter [“Changing File Name“](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-2). Please note — As Chris Coyier [points out](https://css-tricks.com/strategies-for-cache-busting-css/#article-header-id-3), this technique may slow down server response. Using this technique for *only some files* should be fine, be aware to not over-use it.
 
-## Installation
+
+## Installation with Composer
 
 ```bash
 $ composer require germania-kg/asset-timestamper
@@ -167,7 +171,6 @@ No issues known so far, feel free to create one at [issues page.][i0]
 [i1]: https://github.com/GermaniaKG/AssetTimestamper/issues/1 
 
 
-
 ## Development
 
 ```bash
@@ -176,12 +179,13 @@ $ cd AssetTimestamper
 $ composer install
 ```
 
-
 ## Unit tests
 
-Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
-Run [PhpUnit](https://phpunit.de/) like this:
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. Run [PhpUnit](https://phpunit.de/) test or composer scripts like this:
 
 ```bash
+$ composer test
+# or
 $ vendor/bin/phpunit
 ```
+

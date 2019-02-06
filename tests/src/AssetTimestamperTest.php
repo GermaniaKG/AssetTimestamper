@@ -4,7 +4,7 @@ namespace tests;
 use Germania\AssetTimestamper\AssetTimestamper;
 
 
-class AssetTimestamperTest extends \PHPUnit_Framework_TestCase
+class AssetTimestamperTest extends \PHPUnit\Framework\TestCase
 {
     public $mock_dir;
 
